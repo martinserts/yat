@@ -9,6 +9,8 @@ static YAT_API_KEY: &str = "YAT_API_KEY";
 static MIN_YAT_LENGTH: &str = "MIN_YAT_LENGTH";
 static MAX_YAT_LENGTH: &str = "MAX_YAT_LENGTH";
 
+/// Settings loader.
+/// Complication with 'a lifetime arises from the need to use `mockall` for testing
 pub struct Loader<'a, T: SettingsReader<'a>> {
     settings_reader: T,
     marker: PhantomData<&'a T>,
