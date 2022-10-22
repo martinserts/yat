@@ -10,6 +10,6 @@ pub enum SettingsError {
     NotNumber(String),
     #[error("Environment variable `{0}` should be greater than 0")]
     NotGreaterThanZero(String),
-    #[error("Environment variable `{max}` should not be larger than `{min}`")]
+    #[error("Environment variable `{min}` should not be larger than `{max}`")]
     MustNotBeLarger { min: String, max: String },
 }
